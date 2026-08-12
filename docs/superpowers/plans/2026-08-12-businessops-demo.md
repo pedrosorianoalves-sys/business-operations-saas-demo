@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Never modify the original `/private/source-project` project.
+- Never modify the source business application or its repository.
 - Never copy `.git`, `.env.local`, the original logo, original documentation, production URLs, credentials, database rows, customer data, or recipes.
 - All visible UI and committed demonstration data must be English and fictional.
 - `/` must open the demo dashboard without visible authentication.
