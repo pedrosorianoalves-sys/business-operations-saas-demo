@@ -61,6 +61,15 @@ function unit(value: unknown): Unit | null {
     : null
 }
 
+function unitsAreCompatible(source: Unit, target: Unit) {
+  if (source === target) return true
+  return (
+    (source === 'g' || source === 'kg') && (target === 'g' || target === 'kg')
+  ) || (
+    (source === 'ml' || source === 'l') && (target === 'ml' || target === 'l')
+  )
+}
+
 function paymentMethod(value: unknown): PaymentMethod | null {
   const normalized = text(value).toLocaleLowerCase('en-US').replace(/[\s-]+/g, '_')
   const aliases: Record<string, PaymentMethod> = {
@@ -271,6 +280,13 @@ export function validateImportJson(
       )
     ) {
       const existing = ingredientByName.get(normalizedLookup(name))
+      if (existing && existing.unit !== parsedUnit) {
+        issues.push({
+          path: `${path}.unit`,
+          message: `Existing ingredient unit cannot be changed from ${existing.unit} to ${parsedUnit}.`,
+        })
+        continue
+      }
       const plan = {
         id: existing?.id || null,
         name,
@@ -343,6 +359,12 @@ export function validateImportJson(
         issues.push({
           path: `${itemPath}.unit`,
           message: 'Unit must be g, kg, ml, l, or unit.',
+        })
+      }
+      if (ingredient && parsedUnit && !unitsAreCompatible(parsedUnit, ingredient.unit)) {
+        issues.push({
+          path: `${itemPath}.unit`,
+          message: `Unit ${parsedUnit} is incompatible with ingredient unit ${ingredient.unit}.`,
         })
       }
       if (ingredient && Number.isFinite(quantity) && quantity > 0 && parsedUnit) {

@@ -149,4 +149,33 @@ describe('validateImportJson', () => {
       message: 'Ingredient "Secret Sauce" was not found.',
     })
   })
+
+  it('rejects incompatible recipe units and changes to an existing ingredient unit', () => {
+    const result = validateImportJson(
+      JSON.stringify({
+        ingredients: [{ name: 'Burger Bun', unit: 'g', cost: 0.72 }],
+        recipes: [
+          {
+            product: 'Classic Cheeseburger',
+            ingredients: [{ ingredient: 'Burger Bun', quantity: 1, unit: 'ml' }],
+          },
+        ],
+      }),
+      catalog,
+    )
+
+    expect(result.success).toBe(false)
+    expect(result.issues).toEqual(
+      expect.arrayContaining([
+        {
+          path: 'ingredients[0].unit',
+          message: 'Existing ingredient unit cannot be changed from unit to g.',
+        },
+        {
+          path: 'recipes[0].ingredients[0].unit',
+          message: 'Unit ml is incompatible with ingredient unit unit.',
+        },
+      ]),
+    )
+  })
 })
