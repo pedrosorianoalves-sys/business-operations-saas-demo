@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.985 0.004 255);
+  --foreground: oklch(0.18 0.027 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.027 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.027 264);
+  --primary: oklch(0.54 0.21 275);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.01 260);
+  --secondary-foreground: oklch(0.28 0.04 264);
+  --muted: oklch(0.965 0.006 260);
+  --muted-foreground: oklch(0.52 0.028 260);
+  --accent: oklch(0.955 0.025 270);
+  --accent-foreground: oklch(0.36 0.12 274);
+  --destructive: oklch(0.58 0.22 27);
+  --border: oklch(0.91 0.012 260);
+  --input: oklch(0.9 0.014 260);
+  --ring: oklch(0.59 0.19 274);
+  --chart-1: oklch(0.58 0.2 276);
+  --chart-2: oklch(0.72 0.12 180);
+  --chart-3: oklch(0.68 0.14 235);
+  --chart-4: oklch(0.78 0.15 88);
+  --chart-5: oklch(0.65 0.18 35);
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  background: #0b1530;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+::selection {
+  background: color-mix(in oklab, var(--primary) 20%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,11 +1,16 @@
 begin;
 
 create extension if not exists pgtap with schema extensions;
-select plan(11);
+select plan(16);
 
 select has_function('public', 'bootstrap_demo_workspace', array[]::text[], 'bootstrap RPC exists');
 select has_function('public', 'reset_demo_workspace', array[]::text[], 'reset RPC exists');
 select has_function('public', 'import_demo_payload', array['jsonb'], 'atomic import RPC exists');
+select has_function('public', 'record_ingredient_purchase', array['uuid', 'numeric', 'numeric', 'text', 'timestamp with time zone'], 'purchase RPC exists');
+select has_function('public', 'adjust_inventory', array['uuid', 'text', 'numeric', 'text'], 'inventory adjustment RPC exists');
+select has_function('public', 'save_recipe', array['uuid', 'jsonb'], 'recipe RPC exists');
+select has_function('public', 'create_demo_order', array['uuid', 'text', 'text', 'jsonb', 'numeric', 'text'], 'order RPC exists');
+select has_function('public', 'delete_recipe', array['uuid'], 'recipe delete RPC exists');
 
 select policies_are(
   'public',
