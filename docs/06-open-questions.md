@@ -1,6 +1,6 @@
 # Open Questions
 
-- Whether the authenticated Supabase account has capacity for a new free project.
-- Whether the authenticated Vercel account is available for direct deployment after GitHub publication.
+- Which new Supabase project reference should host the public demo database.
+- Which Vercel team/project should host the public URL.
 
-Neither question blocks implementation or repository publication.
+The application and repository are complete without these account choices. Until Supabase is configured, deployments show the full deterministic portfolio preview with mutations disabled.

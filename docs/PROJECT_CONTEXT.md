@@ -10,7 +10,7 @@ A public English portfolio SaaS that demonstrates customer, product, recipe, inv
 
 ## Current status
 
-Implementation in progress in a clean repository. Architecture and visual direction are approved. The original business application remains untouched.
+Implementation complete in a clean, independent repository. All application routes, fictional preview data, tenant-scoped database workflows, JSON import, reset, tests, privacy checks, and responsive browser QA are complete. Hosted Supabase configuration remains an account-side deployment step.
 
 ## Main goals
 
@@ -34,23 +34,26 @@ Pure TypeScript domain modules own calculations and import validation. Next.js S
 - English database enum values and UI copy.
 - One atomic database RPC for each multi-table import and reset.
 - No service-role key in the application.
+- Deterministic read-only preview keeps the public portfolio reviewable before hosted Supabase variables are added.
 
 ## Completed steps
 
-- Audited the source architecture and privacy risks.
-- Confirmed the destination GitHub name is available.
-- Created and versioned the design specification, visual concept, and implementation plan.
+- Audited source architecture and privacy risks without modifying the source project.
+- Implemented tested costing, unit conversion, matching, validation, dashboard aggregation, and action parsing.
+- Implemented isolated PostgreSQL schema, RLS, deterministic seed, reset, import, stock, recipe, purchase, and order functions.
+- Implemented all 11 English application routes and responsive navigation.
+- Verified migrations and workflows with an embedded PostgreSQL runtime.
+- Passed lint, typecheck, unit tests, production build, privacy scan, and desktop/mobile browser QA.
 
 ## Next steps
 
-- Implement domain tests and database schema.
-- Implement demo bootstrap, reset, application shell, and business workflows.
-- Verify privacy, build, browser behavior, and publish to GitHub.
+- Publish the verified repository to GitHub.
+- Create a dedicated hosted Supabase project and apply migrations.
+- Add environment variables in Vercel and deploy.
 
 ## Open questions
 
-- A dedicated hosted Supabase project may require account-side creation if no authenticated local management session is available.
-- Vercel environment variables can be configured after the repository and Supabase project exist.
+- Which dedicated Supabase project reference and Vercel project Pedro will use for the public live demo.
 
 ## Important constraints
 
@@ -60,10 +63,10 @@ Pure TypeScript domain modules own calculations and import validation. Next.js S
 
 ## Last updated date
 
-2026-08-12
+2026-08-13
 
 ## Last Codex Sync
-- Last read by Codex: 2026-08-12
-- Last updated by Codex: 2026-08-12
-- Last completed task: Approved architecture and implementation plan
-- Current next step: Implement tested domain modules and isolated database schema
+- Last read by Codex: 2026-08-13
+- Last updated by Codex: 2026-08-13
+- Last completed task: Full implementation and QA of BusinessOps Demo
+- Current next step: Publish GitHub repository, then configure Supabase and Vercel
