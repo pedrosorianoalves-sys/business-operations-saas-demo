@@ -10,7 +10,7 @@ A public English portfolio SaaS that demonstrates customer, product, recipe, inv
 
 ## Current status
 
-Implementation complete in a clean, independent repository. All application routes, fictional preview data, tenant-scoped database workflows, JSON import, reset, tests, privacy checks, and responsive browser QA are complete. Hosted Supabase configuration remains an account-side deployment step.
+Implementation complete and published in a clean, independent public repository. All application routes, fictional preview data, tenant-scoped database workflows, JSON import, reset, tests, privacy checks, and responsive browser QA are complete. Hosted Supabase and Vercel configuration remain account-side deployment steps.
 
 ## Main goals
 
@@ -44,10 +44,10 @@ Pure TypeScript domain modules own calculations and import validation. Next.js S
 - Implemented all 11 English application routes and responsive navigation.
 - Verified migrations and workflows with an embedded PostgreSQL runtime.
 - Passed lint, typecheck, unit tests, production build, privacy scan, and desktop/mobile browser QA.
+- Published the clean public repository at https://github.com/pedrosorianoalves-sys/business-operations-saas-demo.
 
 ## Next steps
 
-- Publish the verified repository to GitHub.
 - Create a dedicated hosted Supabase project and apply migrations.
 - Add environment variables in Vercel and deploy.
 
@@ -59,7 +59,7 @@ Pure TypeScript domain modules own calculations and import validation. Next.js S
 
 - Every committed person, company, product, recipe, price, order, and financial value is fictional.
 - Never use the original project's environment or database.
-- The GitHub repository is public only after a clean privacy scan.
+- Keep the GitHub repository public only while privacy and secret checks pass.
 
 ## Last updated date
 
@@ -68,5 +68,5 @@ Pure TypeScript domain modules own calculations and import validation. Next.js S
 ## Last Codex Sync
 - Last read by Codex: 2026-08-13
 - Last updated by Codex: 2026-08-13
-- Last completed task: Full implementation and QA of BusinessOps Demo
-- Current next step: Publish GitHub repository, then configure Supabase and Vercel
+- Last completed task: Published the verified public GitHub repository
+- Current next step: Configure a dedicated Supabase project and deploy with Vercel

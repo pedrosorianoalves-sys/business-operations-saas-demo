@@ -15,3 +15,4 @@
 - Added responsive mobile navigation, reusable brand, forms, confirmations, loading, error, and empty states.
 - Added complete README, security policy, and automated privacy scanner.
 - Completed production build, database execution checks, and desktop/mobile browser QA.
+- Removed the final source-project reference from Git history, repeated privacy checks, and published the clean public GitHub repository.

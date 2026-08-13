@@ -2,6 +2,8 @@
 
 BusinessOps Demo is implementation-complete and deployable. The application contains 11 English routes, deterministic fictional data, a responsive SaaS shell, operational workflows, tested domain logic, anonymous visitor tenancy, PostgreSQL RLS, transactional imports, and reset.
 
+The clean public repository is available at https://github.com/pedrosorianoalves-sys/business-operations-saas-demo.
+
 Verified on 2026-08-13:
 
 - 40 unit tests pass across costing, forms, dashboard aggregation, session bootstrap, matching, import validation/execution, and privacy scanning.

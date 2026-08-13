@@ -9,9 +9,9 @@
 5. Operational CRUD modules.
 6. Data Import workbench.
 7. Browser QA and privacy audit.
+8. Public GitHub repository with clean history.
 
 ## Deployment handoff
 
-1. Publish the clean repository to GitHub.
-2. Create and migrate a dedicated Supabase project with anonymous sign-ins enabled.
-3. Configure Vercel environment variables and deploy.
+1. Create and migrate a dedicated Supabase project with anonymous sign-ins enabled.
+2. Configure Vercel environment variables and deploy.
